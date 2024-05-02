@@ -33,3 +33,6 @@ function sendTempMsg(chatId, text, options) {
       })
       .catch(() => {});
 }
+
+var http = require('http');
+http.createServer((req, res) => res.end()).listen(8080);
