@@ -21,7 +21,7 @@ bot.on("message", (msg) => {
     if (!lastReplyed[msg.chat.id]) {
       lastReplyed[msg.chat.id] = {};
     }
-    lastReplyed[msg.chat.id][msg.from.id] = msg.reply_to_message.message_id;
+    lastReplyed[msg.chat.id][msg.from.id] = msg.message_id;
     return;
   }
 });
