@@ -7,6 +7,7 @@ const lastReplyed = {};
 
 bot.on("message", (msg) => {
   if (msg.text == "/lastreply" || msg.text == "/lastreply@reply_checker_bot") {
+    bot.deleteMessage(msg.chat.id, msg.message_id);
     if (lastReplyed[msg.chat.id] && lastReplyed[msg.chat.id][msg.from.id]) {
       sendTempMsg(msg.chat.id, "☝️😉", {reply_to_message_id: lastReplyed[msg.chat.id][msg.from.id]});
     }
@@ -19,7 +20,7 @@ bot.on("message", (msg) => {
     if (!lastReplyed[msg.chat.id]) {
       lastReplyed[msg.chat.id] = {};
     }
-    lastReplyed[msg.chat.id][msg.from.id] = msg.message_id;
+    lastReplyed[msg.chat.id][msg.from.id] = msg.reply_to_message.message_id;
     return;
   }
 });
