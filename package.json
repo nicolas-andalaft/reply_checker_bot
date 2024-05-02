@@ -4,11 +4,16 @@
   "description": "Reply Checker Bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "netlify deploy --prod"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-telegram-bot-api": "^0.65.1"
+    "express": "^4.19.2",
+    "netlify-cli": "^17.23.1",
+    "netlify-lambda": "^2.0.16",
+    "node-telegram-bot-api": "^0.65.1",
+    "serverless-http": "^3.2.0"
   }
 }
