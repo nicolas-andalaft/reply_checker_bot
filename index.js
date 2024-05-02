@@ -9,7 +9,7 @@ bot.on("message", (msg) => {
   if (msg.text == "/lastreply" || msg.text == "/lastreply@reply_checker_bot") {
     bot.deleteMessage(msg.chat.id, msg.message_id);
     if (lastReplyed[msg.chat.id] && lastReplyed[msg.chat.id][msg.from.id]) {
-      sendTempMsg(msg.chat.id, "☝️😉", {reply_to_message_id: lastReplyed[msg.chat.id][msg.from.id]});
+      sendTempMsg(msg.chat.id, "reply:☝️😉", {reply_to_message_id: lastReplyed[msg.chat.id][msg.from.id]});
     }
     else {
       sendTempMsg(msg.chat.id, "Você não tem uma mensagem respondida");
