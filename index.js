@@ -1,7 +1,8 @@
 const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.API_TOKEN || "";
+const polling = process.env.IS_POLLING || "0";
 
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(token, {polling: polling == "1"});
 
 const lastReplyed = {};
 
